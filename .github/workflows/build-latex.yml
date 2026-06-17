@@ -19,28 +19,38 @@ jobs:
       - name: Baixar o repositório
         uses: actions/checkout@v4
 
-      - name: Compilar cada Relat_*/Relatorio_Modelo.tex
+      - name: Coletar/compilar os relatórios de cada Relat_*
         run: |
           set -e
           shopt -s nullglob
           mkdir -p saida
           encontrou=0
-          for tex in Relat_*/Relatorio_Modelo.tex; do
-            encontrou=1
-            dir=$(dirname "$tex")
-            echo "::group::Compilando $tex"
-            # latexmk roda o pdflatex quantas vezes for preciso para
-            # resolver referências, sumário e a bibliografia manual.
-            (cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error Relatorio_Modelo.tex)
-            # Renomeia o PDF pelo nome da pasta para não colidir na release.
-            cp "$dir/Relatorio_Modelo.pdf" "saida/${dir}.pdf"
-            echo "::endgroup::"
+          for dir in Relat_*/; do
+            dir=${dir%/}            # remove a barra final -> "Relat_1"
+            pronto="$dir/$dir.pdf"   # PDF final já entregue, ex.: Relat_1/Relat_1.pdf
+            if [ -f "$pronto" ]; then
+              # A pasta já tem o PDF final pronto: não recompila, apenas reaproveita.
+              echo "Reaproveitando PDF pronto: $pronto"
+              cp "$pronto" "saida/${dir}.pdf"
+              encontrou=1
+            elif [ -f "$dir/Relatorio_Modelo.tex" ]; then
+              echo "::group::Compilando $dir/Relatorio_Modelo.tex"
+              # latexmk roda o pdflatex quantas vezes for preciso para
+              # resolver referências, sumário e a bibliografia manual.
+              (cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error Relatorio_Modelo.tex)
+              # Renomeia o PDF pelo nome da pasta para não colidir na release.
+              cp "$dir/Relatorio_Modelo.pdf" "saida/${dir}.pdf"
+              encontrou=1
+              echo "::endgroup::"
+            else
+              echo "Pulando $dir (sem $dir.pdf nem Relatorio_Modelo.tex)"
+            fi
           done
           if [ "$encontrou" = "0" ]; then
-            echo "Nenhum Relat_*/Relatorio_Modelo.tex encontrado."
+            echo "Nenhum relatório encontrado para publicar."
             exit 1
           fi
-          echo "PDFs gerados:"
+          echo "PDFs prontos para a release:"
           ls -l saida
 
       - name: Publicar os PDFs na Release "latest"
