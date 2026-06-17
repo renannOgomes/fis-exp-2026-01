@@ -1,0 +1,51 @@
+name: Compilar LaTeX e publicar PDFs
+
+# Dispara a cada push na branch master e permite rodar manualmente pela aba Actions
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Permite que o workflow crie/atualize releases no repositório
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Imagem oficial completa do TeX Live (inclui pdfpages, babel-portuges, etc.)
+    container: texlive/texlive:latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Compilar cada Relat_*/Relatorio_Modelo.tex
+        run: |
+          set -e
+          shopt -s nullglob
+          mkdir -p saida
+          encontrou=0
+          for tex in Relat_*/Relatorio_Modelo.tex; do
+            encontrou=1
+            dir=$(dirname "$tex")
+            echo "::group::Compilando $tex"
+            # latexmk roda o pdflatex quantas vezes for preciso para
+            # resolver referências, sumário e a bibliografia manual.
+            (cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error Relatorio_Modelo.tex)
+            # Renomeia o PDF pelo nome da pasta para não colidir na release.
+            cp "$dir/Relatorio_Modelo.pdf" "saida/${dir}.pdf"
+            echo "::endgroup::"
+          done
+          if [ "$encontrou" = "0" ]; then
+            echo "Nenhum Relat_*/Relatorio_Modelo.tex encontrado."
+            exit 1
+          fi
+          echo "PDFs gerados:"
+          ls -l saida
+
+      - name: Publicar os PDFs na Release "latest"
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Última versão dos relatórios
+          files: saida/*.pdf

@@ -1,0 +1,20 @@
+# Arquivos auxiliares gerados pelo LaTeX (não precisam ir para o repositório)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# O PDF do modelo é gerado pela pipeline e publicado como Release, não versionado.
+# (Os PDFs finais de cada relatório nas pastas Relat_* continuam versionados.)
+Relatorio_Modelo.pdf
+
+# Backups do SciDAVis
+*.sciprj~
