@@ -276,14 +276,22 @@ Nesta parte, o peso suspenso é constante e a massa total varia; a equação~\eq
 \label{eq:reg2}
 a = \frac{p}{M+m},
 \end{equation}
-ou seja, a aceleração é inversamente proporcional à massa total. Equivalentemente, ao se
-escrever $a$ em função de $1/(M+m)$, espera-se uma reta passando pela origem cujo coeficiente
-angular é o peso $p$. O ajuste da curva $a = p/(M+m)$ aos dados, feito no SciDavis
+ou seja, a aceleração é inversamente proporcional à massa total. Embora o roteiro sugira uma
+regressão linear de $a$ em função de $1/(M+m)$, durante a aula o próprio professor orientou que a
+análise fosse feita diretamente sobre o gráfico de $a$ em função da massa total $(M+m)$, ajustando
+a ele a função $a = p/(M+m)$. Esse ajuste não-linear, realizado no SciDavis
 (Figura~\ref{fig:graf2}), forneceu
 \[
 p = 0{,}2343 \pm 0{,}0012~\mathrm{N}, \qquad R^2 = 0{,}9999,
 \]
 confirmando a dependência hiperbólica prevista pela equação~\eqref{eq:reg2}.
+
+O ajuste funciona porque, mantido o peso suspenso $p$ constante ao longo de todo o experimento, a
+aceleração não varia de forma livre: ela fica vinculada à massa total por $a = p/(M+m)$. Assim, os
+pontos experimentais descrevem uma hipérbole --- e não uma reta ---, e o único parâmetro livre do
+ajuste é precisamente o peso $p$ que traciona o sistema. O valor de $p$ que melhor reproduz a curva
+é, portanto, uma medida indireta da força peso, que pode ser confrontada com o valor obtido pela
+balança.
 
 Comparando o valor ajustado com o peso medido $p = mg = 0{,}245~\mathrm{N}$, o erro relativo é
 \[
@@ -327,11 +335,6 @@ disponibilizado no portal UnB Aprender3.
 
 \bibitem{Wytler_2} Wytler C. Santos, {\it Medidas, algarismos e erros}, texto disponibilizado
 no portal UnB Aprender3.
-
-\bibitem {Young} H.D. Young \& R.A. Freedman, {\it Física I, Sears \& Zemansky}, Pearson,
-Addison Wesley, $12^a$ Ed., (2009).
-
-
 
 
 \end{thebibliography}
