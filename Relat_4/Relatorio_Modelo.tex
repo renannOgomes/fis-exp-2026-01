@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage[final]{pdfpages}
+\usepackage{pdflscape}
 
 \usepackage{cite}
 \usepackage{bm}
@@ -199,13 +200,21 @@ Como a massa total é constante, a equação~\eqref{eq:a2} pode ser reescrita is
 p = (M+m)\,a,
 \end{equation}
 que é uma reta $y = A + Bx$ com $x = a$ e $y = p$, cujo coeficiente angular corresponde à massa
-total $(M+m)$. A regressão linear realizada no SciDavis (Figura~\ref{fig:graf1}) forneceu
+total $(M+m)$. Os coeficientes da reta foram determinados pelo método dos mínimos quadrados, a
+partir dos $n = 5$ pares $(a_k,\,p_k)$ da Tabela~\ref{tab:acel1}:
+\begin{equation}
+\label{eq:minquad}
+B = \frac{n\sum x_k y_k - \sum x_k \sum y_k}{n\sum x_k^2 - \left(\sum x_k\right)^2},
+\qquad
+A = \bar{y} - B\,\bar{x}.
+\end{equation}
+Efetuando as somas, obtém-se
 \[
-\text{(coef.\ angular) } B = 0{,}3039 \pm 0{,}0049~\mathrm{kg}, \qquad
-\text{(coef.\ linear) } A = 0{,}0083 \pm 0{,}0073~\mathrm{N},
+B = 0{,}3039 \pm 0{,}0018~\mathrm{kg}, \qquad A = 0{,}0083~\mathrm{N}, \qquad R^2 = 0{,}9999,
 \]
-com coeficiente de determinação $R^2 = 0{,}9999$, indicando excelente ajuste linear, como
-previsto pela equação~\eqref{eq:reg1}.
+indicando excelente ajuste linear, como previsto pela equação~\eqref{eq:reg1}. Esses valores
+coincidem com os fornecidos pela regressão traçada no SciDavis (Figura~\ref{fig:graf1}), que
+resultou no mesmo coeficiente angular $B = 0{,}3039~\mathrm{kg}$, confirmando o cálculo.
 
 Comparando o coeficiente angular com a massa total medida na balança,
 $(M+m) = 0{,}296~\mathrm{kg}$, o erro relativo é
@@ -293,6 +302,19 @@ ajuste é precisamente o peso $p$ que traciona o sistema. O valor de $p$ que mel
 é, portanto, uma medida indireta da força peso, que pode ser confrontada com o valor obtido pela
 balança.
 
+Analiticamente, o mesmo parâmetro $p$ pode ser obtido linearizando a equação~\eqref{eq:reg2}.
+Definindo $X = 1/(M+m)$ (coluna da Tabela~\ref{tab:acel2}), ela assume a forma $a = p\,X$, ou seja,
+uma reta $y = A + Bx$ que passa pela origem e cujo coeficiente angular é o próprio peso. Aplicando
+o método dos mínimos quadrados, equação~\eqref{eq:minquad}, aos $n = 5$ pares $(X_k,\,a_k)$,
+obtém-se
+\[
+B = p = 0{,}2344~\mathrm{N}, \qquad A \approx 0, \qquad R^2 = 0{,}963,
+\]
+em que o coeficiente linear praticamente nulo confirma que a reta passa pela origem, como prevê a
+teoria. O coeficiente angular calculado à mão concorda com o valor $p = 0{,}2343~\mathrm{N}$ do
+ajuste não-linear do SciDavis; o $R^2$ ligeiramente menor decorre da faixa estreita de valores
+coberta por $1/(M+m)$.
+
 Comparando o valor ajustado com o peso medido $p = mg = 0{,}245~\mathrm{N}$, o erro relativo é
 \[
 \varepsilon = \frac{|0{,}245 - 0{,}2343|}{0{,}245} \times 100\% \approx 4{,}4\%.
@@ -347,6 +369,35 @@ no portal UnB Aprender3.
 % \includepdf[pages=1]{Geometrodynamics.pdf} %%%%% Use esse comando se desejar acrescentar uma pagina em pdf
 
 
+%-------------------------------ANEXOS--------------------------------------
+\appendix
+
+% Margens reduzidas nas paginas de anexo para os graficos ocuparem o maximo possivel
+\newgeometry{left=0.8cm,right=0.8cm,top=0.8cm,bottom=0.8cm}
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{center}
+	\vspace*{\fill}
+	\includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{graf1.jpg}\\[0.6cm]
+	{\large Gráfico 1 --- Regressão linear do peso suspenso $p$ em função da aceleração $a$
+	do sistema (Parte 1).}
+	\vspace*{\fill}
+\end{center}
+\end{landscape}
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{center}
+	\vspace*{\fill}
+	\includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{graf2.jpg}\\[0.6cm]
+	{\large Gráfico 2 --- Aceleração $a$ do sistema em função da massa total $(M+m)$, com o
+	ajuste $a = p/(M+m)$ (Parte 2).}
+	\vspace*{\fill}
+\end{center}
+\end{landscape}
+
+\restoregeometry
 
 
 \end{document}
