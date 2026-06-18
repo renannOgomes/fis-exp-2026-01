@@ -44,15 +44,15 @@
 
 
 
-{\LARGE \bf  Título do Relatório} \vspace{2cm}
+{\LARGE \bf  Experimento IV --- Leis de Newton:\\ dinâmica de um carrinho em trilho de ar} \vspace{2cm}
 
 Por
 %
 \vspace{2cm}
 
-{\bf Aluno 1 - Matrícula :\\
-			Aluno 2 - Matrícula :\\
-			Aluno 3 - Matrícula :}
+{\bf	Renann de Oliveira Gomes – 200043030 \\
+		Ana Jullia B. M. Lopes – 232024554 \\
+		Eduardo Henrique - 252015024 \\}
 
 
 
@@ -60,7 +60,7 @@ Por
 \vspace*{\fill}
 
 %
-{Brasília-DF,  19 de setembro de 2023}
+{Brasília-DF, junho de 2026}
 
 
 \end{center}
@@ -74,105 +74,268 @@ Por
 %\setcounter{chapter}{1}
 
 \section{Objetivos}
-Descreva o que se pretende verificar e/ou aprender com o experimento
-
-
-
-\section{Introdução Teórica}
-Faça uma breve apresentação do experimento indicando qual fenômeno será estudado, o modelo físico envolvido e quais  relações matemáticas serão relevantes.
-
-
-Uma equação deve ser assim:
-\begin{equation}
-\label{equacao1}
-\vec{F} = \frac{d \vec{p}}{dt} = m\vec{a}.
-\end{equation}
-
-
-\section{Parte Experimental e Discussão}
-Este é o item mais importante do relatório . Descreva os procedimentos experimentais, os métodos  de medida e os cálculos envolvidos. Discuta os resultados obtidos
-e relacione-os com os modelos e métodos empregados na obtenção deles.
-
-\subsection{Material utilizado}
-
+Analisar a dinâmica de um carrinho que desliza sobre um trilho de ar horizontal, tracionado
+por um peso suspenso, verificando que o movimento obedece às leis de Newton. O experimento é
+dividido em duas partes:
 \begin{itemize}
-	\item chave de fenda;
-	\item régua;
-	\item cronômetro;
-	\item lâminas de corte.
+	\item \textbf{Parte 1:} manter constante a massa total do sistema $(M+m)$ e variar o peso
+	suspenso, analisando a relação entre a força peso que traciona o carrinho e a aceleração
+	resultante do sistema;
+	\item \textbf{Parte 2:} manter constante o peso suspenso e variar a massa do carrinho,
+	analisando a relação entre a massa total do sistema e a aceleração.
 \end{itemize}
 
 
 
+\section{Introdução Teórica}
+A segunda lei de Newton estabelece que a força resultante $\vec{F}$ sobre um corpo é igual ao
+produto de sua massa inercial pela aceleração adquirida:
+\begin{equation}
+\label{eq:2lei}
+\vec{F} = \frac{d \vec{p}}{dt} = m\vec{a}.
+\end{equation}
 
-Para inserir uma tabela
+Considere o carrinho de massa $M$ apoiado sobre o trilho de ar horizontal (atrito desprezível),
+ligado por um barbante inextensível que passa por uma polia ideal a um peso de massa $m$ suspenso
+sob a ação da gravidade. Como o barbante é inextensível, o carrinho e o peso possuem o mesmo
+módulo de aceleração $a$. Aplicando a segunda lei de Newton a cada corpo:
+\begin{align}
+\text{peso suspenso $m$:}\qquad & mg - T = m\,a, \label{eq:m}\\
+\text{carrinho $M$:}\qquad & T = M\,a. \label{eq:M}
+\end{align}
 
-	\begin{table}[!h]
+Somando as equações~\eqref{eq:m} e~\eqref{eq:M}, a tração $T$ se cancela e obtemos
+$mg = (M+m)\,a$, ou seja,
+\begin{equation}
+\label{eq:a1}
+a = \frac{m}{m+M}\,g,
+\end{equation}
+onde $g = 9{,}8~\mathrm{m/s^2}$ é a aceleração da gravidade. Definindo o peso suspenso como
+$p = mg$, a equação~\eqref{eq:a1} pode ser reescrita na forma
+\begin{equation}
+\label{eq:a2}
+a = \frac{p}{m+M}.
+\end{equation}
+
+Substituindo~\eqref{eq:a1} em~\eqref{eq:M}, obtém-se a tração no barbante:
+\begin{equation}
+\label{eq:T}
+T = M\,a = \frac{M\,m}{M+m}\,g.
+\end{equation}
+
+Como as forças que atuam sobre o carrinho são constantes, o movimento é uniformemente variado
+(MRUV). Partindo do repouso ($v_0 = 0$) na posição $x_0 = 0$, a equação de movimento
+\begin{equation}
+\label{eq:mruv}
+x(t) = x_0 + v_0 t + \frac{1}{2}a\,t^2
+\end{equation}
+reduz-se a $x = \tfrac{1}{2}a\,t^2$. Isolando a aceleração, obtém-se a relação usada para
+calcular $a$ a partir do tempo medido para o carrinho percorrer a distância fixa $x$:
+\begin{equation}
+\label{eq:acalc}
+a = \frac{2x}{t^2}, \qquad x = 0{,}300~\mathrm{m}.
+\end{equation}
+
+
+\section{Parte Experimental 1 --- peso suspenso variável}
+
+\subsection{Material utilizado}
+\begin{itemize}
+	\item kit trilho de ar com cronômetro digital (função F2), sensores e eletroímã;
+	\item massas diversas (discos de 10~g e suporte);
+	\item balança e régua.
+\end{itemize}
+
+\subsection{Procedimento}
+Mediu-se a massa do carrinho vazio $(230{,}5~\mathrm{g})$ e a massa do suporte com o peso
+inicial $(m = 25~\mathrm{g})$. Acrescentaram-se ao carrinho quatro discos de $10~\mathrm{g}$,
+de modo que a massa total inicial do sistema fosse $M + m = (270{,}5 + 25{,}0)~\mathrm{g}
+\approx 296~\mathrm{g}$. O sensor $S_1$ foi posicionado a uma distância fixa $x = 30~\mathrm{cm}$
+do pino central do carrinho. A cada etapa, transferiu-se $10~\mathrm{g}$ do carrinho para o
+gancho suspenso, mantendo \emph{constante} a massa total do sistema e variando apenas o peso que
+traciona o carrinho. Para cada configuração foram realizadas $5$ medidas de tempo
+(Tabela~\ref{tab:tempos1}).
+
+\begin{table}[!h]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|} \hline \hline
-	 Intervalos    & $\Delta x_1$          & $\Delta x_2$   & $\Delta x_3$  & $\Delta x_4$  & $\Delta x_5$ \\
-	 de tempo (s) & 10 cm & 20 cm & 30 cm & 40 cm & 50 cm
-	\\ \hline \hline
-	 $\Delta t_1$  &   &  &  &  & \\
-	\hline
-	 $\Delta t_2$ &    &   &  &  &   \\
-	\hline
-	 $\Delta t_3$ &    &   &  &  &   \\
-	 \hline
-	 $\Delta t_4$ &    &   &  &  &   \\
-	 \hline
-	 $\Delta t_5$ &   &   &  &  &   \\
-	 \hline
-	 $\Delta \bar{t} $ &   &   &  &  &   \\
-	 \hline
-	 Erro aleatório  &   &   &  &  &   \\
-	 \hline \hline
+	Tempos (s) & $m=25$~g & $m=35$~g & $m=45$~g & $m=55$~g & $m=65$~g \\ \hline \hline
+	$t_1$              & 0,908 & 0,737 & 0,649 & 0,588 & 0,537 \\ \hline
+	$t_2$              & 0,875 & 0,736 & 0,651 & 0,587 & 0,544 \\ \hline
+	$t_3$              & 0,876 & 0,738 & 0,649 & 0,584 & 0,539 \\ \hline
+	$t_4$              & 0,869 & 0,738 & 0,647 & 0,581 & 0,539 \\ \hline
+	$t_5$              & 0,871 & 0,738 & 0,648 & 0,585 & 0,538 \\ \hline
+	$\bar{t}$          & 0,880 & 0,737 & 0,649 & 0,585 & 0,539 \\ \hline
+	Erro aleatório     & 0,008 & 0,000 & 0,001 & 0,001 & 0,001 \\ \hline
+	Erro absoluto      & 0,009 & 0,001 & 0,002 & 0,002 & 0,002 \\ \hline \hline
 	\end{tabular}
-	\caption{Movimento Retilíneo e Uniforme}
-	\label{tabela1}
-	\end{table}
+	\caption{Medidas de tempo --- carrinho tracionado por peso suspenso variável (Parte 1).
+	A massa total do sistema permaneceu constante, $M+m \approx 0{,}296$~kg.}
+	\label{tab:tempos1}
+\end{table}
 
+A partir do tempo médio de cada configuração, a aceleração foi calculada pela
+equação~\eqref{eq:acalc} e o peso suspenso por $p = mg$. Os resultados estão na
+Tabela~\ref{tab:acel1}.
 
-
-\newpage\begin{figure}[!h]
+\begin{table}[!h]
 	\centering
-\includegraphics[width=9.5cm]{graf1.jpg}
-	\caption{Galáxia Andrômeda no infravermelho}
-	\label{fig1}
-	\end{figure}
-	\begin{figure}[!h]
+	\begin{tabular}{|c|c|c|c|} \hline \hline
+	$N$ & Aceleração $a$ (m/s$^2$) & Massa suspensa $m$ (kg) & Peso $p=mg$ (N) \\ \hline \hline
+	1 & $0{,}775 \pm 0{,}017$ & 0,025 & $0{,}245 \pm 0{,}005$ \\ \hline
+	2 & $1{,}103 \pm 0{,}006$ & 0,035 & $0{,}343 \pm 0{,}005$ \\ \hline
+	3 & $1{,}425 \pm 0{,}010$ & 0,045 & $0{,}441 \pm 0{,}005$ \\ \hline
+	4 & $1{,}753 \pm 0{,}017$ & 0,055 & $0{,}539 \pm 0{,}005$ \\ \hline
+	5 & $2{,}062 \pm 0{,}021$ & 0,065 & $0{,}637 \pm 0{,}005$ \\ \hline \hline
+	\end{tabular}
+	\caption{Acelerações do sistema e pesos suspensos (Parte 1).}
+	\label{tab:acel1}
+\end{table}
+
+\subsection{Análise dos dados}
+Como a massa total é constante, a equação~\eqref{eq:a2} pode ser reescrita isolando o peso:
+\begin{equation}
+\label{eq:reg1}
+p = (M+m)\,a,
+\end{equation}
+que é uma reta $y = A + Bx$ com $x = a$ e $y = p$, cujo coeficiente angular corresponde à massa
+total $(M+m)$. A regressão linear realizada no SciDavis (Figura~\ref{fig:graf1}) forneceu
+\[
+\text{(coef.\ angular) } B = 0{,}3039 \pm 0{,}0049~\mathrm{kg}, \qquad
+\text{(coef.\ linear) } A = 0{,}0083 \pm 0{,}0073~\mathrm{N},
+\]
+com coeficiente de determinação $R^2 = 0{,}9999$, indicando excelente ajuste linear, como
+previsto pela equação~\eqref{eq:reg1}.
+
+Comparando o coeficiente angular com a massa total medida na balança,
+$(M+m) = 0{,}296~\mathrm{kg}$, o erro relativo é
+\[
+\varepsilon = \frac{|0{,}3039 - 0{,}296|}{0{,}296} \times 100\% \approx 2{,}7\%.
+\]
+A pequena diferença é compatível com as incertezas experimentais (atrito residual no trilho,
+massa do barbante e da polia), confirmando que $p = (M+m)\,a$.
+
+\begin{figure}[!h]
 	\centering
-\includegraphics[width=9.5cm]{graf2.jpg}
-	\caption{Diagrama do cronômetro, sensores, eletroímã e chave liga/desliga}
-	\label{fig2}
-	\end{figure}
+	\includegraphics[width=13cm]{graf1.jpg}
+	\caption{Regressão linear do peso suspenso $p$ em função da aceleração $a$ do sistema
+	(Parte 1). O coeficiente angular corresponde à massa total $(M+m)$.}
+	\label{fig:graf1}
+\end{figure}
+
+
+\newpage
+\section{Parte Experimental 2 --- massa do carrinho variável}
+
+\subsection{Procedimento}
+Mantendo as mesmas condições experimentais, fixou-se o peso suspenso em $m = 25~\mathrm{g}$
+(peso $p = mg = 0{,}245~\mathrm{N}$, constante) e variou-se a massa do carrinho. Partindo do
+carrinho sem discos $(M = 230,5~\mathrm{g})$, acrescentou-se $10~\mathrm{g}$ ao carrinho a cada
+etapa, de modo que a massa total passou de $0{,}256$ a $0{,}296$~kg. A distância foi mantida em
+$x = 30~\mathrm{cm}$ e, para cada massa, realizaram-se $5$ medidas de tempo
+(Tabela~\ref{tab:tempos2}).
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|} \hline \hline
+	Tempos (s) & $M{+}m{=}0{,}256$ & $0{,}266$ & $0{,}276$ & $0{,}286$ & $0{,}296$ \\ \hline \hline
+	$t_1$              & 0,808 & 0,821 & 0,835 & 0,857 & 0,855 \\ \hline
+	$t_2$              & 0,809 & 0,832 & 0,840 & 0,862 & 0,866 \\ \hline
+	$t_3$              & 0,795 & 0,832 & 0,842 & 0,857 & 0,869 \\ \hline
+	$t_4$              & 0,809 & 0,833 & 0,844 & 0,874 & 0,865 \\ \hline
+	$t_5$              & 0,808 & 0,829 & 0,841 & 0,856 & 0,870 \\ \hline
+	$\bar{t}$          & 0,806 & 0,829 & 0,841 & 0,861 & 0,865 \\ \hline
+	Erro aleatório     & 0,003 & 0,002 & 0,002 & 0,004 & 0,003 \\ \hline
+	Erro absoluto      & 0,004 & 0,003 & 0,003 & 0,005 & 0,004 \\ \hline \hline
+	\end{tabular}
+	\caption{Medidas de tempo --- carrinho com massa variável e peso suspenso constante
+	(Parte 2). A massa total $M+m$ está indicada em kg.}
+	\label{tab:tempos2}
+\end{table}
+
+A partir do tempo médio, calculou-se a aceleração pela equação~\eqref{eq:acalc}; os resultados,
+juntamente com a massa total e seu inverso, estão na Tabela~\ref{tab:acel2}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|} \hline \hline
+	$N$ & Massa total $M+m$ (kg) & $\dfrac{1}{M+m}$ (kg$^{-1}$) & Aceleração $a$ (m/s$^2$) \\ \hline \hline
+	1 & 0,256 & 3,906 & $0{,}924 \pm 0{,}011$ \\ \hline
+	2 & 0,266 & 3,759 & $0{,}872 \pm 0{,}009$ \\ \hline
+	3 & 0,276 & 3,623 & $0{,}848 \pm 0{,}007$ \\ \hline
+	4 & 0,286 & 3,497 & $0{,}809 \pm 0{,}010$ \\ \hline
+	5 & 0,296 & 3,378 & $0{,}802 \pm 0{,}009$ \\ \hline \hline
+	\end{tabular}
+	\caption{Massas totais e acelerações do sistema (Parte 2).}
+	\label{tab:acel2}
+\end{table}
+
+\subsection{Análise dos dados}
+Nesta parte, o peso suspenso é constante e a massa total varia; a equação~\eqref{eq:a2} fica
+\begin{equation}
+\label{eq:reg2}
+a = \frac{p}{M+m},
+\end{equation}
+ou seja, a aceleração é inversamente proporcional à massa total. Equivalentemente, ao se
+escrever $a$ em função de $1/(M+m)$, espera-se uma reta passando pela origem cujo coeficiente
+angular é o peso $p$. O ajuste da curva $a = p/(M+m)$ aos dados, feito no SciDavis
+(Figura~\ref{fig:graf2}), forneceu
+\[
+p = 0{,}2343 \pm 0{,}0012~\mathrm{N}, \qquad R^2 = 0{,}9999,
+\]
+confirmando a dependência hiperbólica prevista pela equação~\eqref{eq:reg2}.
+
+Comparando o valor ajustado com o peso medido $p = mg = 0{,}245~\mathrm{N}$, o erro relativo é
+\[
+\varepsilon = \frac{|0{,}245 - 0{,}2343|}{0{,}245} \times 100\% \approx 4{,}4\%.
+\]
+A diferença, novamente pequena, decorre principalmente do atrito residual e da inércia da polia,
+que reduzem ligeiramente a força efetiva que acelera o sistema.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=13cm]{graf2.jpg}
+	\caption{Aceleração $a$ do sistema em função da massa total $(M+m)$, com o ajuste
+	$a = p/(M+m)$ (Parte 2). O parâmetro ajustado $p$ corresponde ao peso suspenso constante.}
+	\label{fig:graf2}
+\end{figure}
+
 
 \section{Conclusão}
-Faça um resumo dos resultados finais obtidos, tomando os objetivos iniciais como referência.
+O experimento confirmou, nas duas partes, a validade da segunda lei de Newton aplicada ao
+sistema carrinho--peso suspenso descrito pela equação $a = p/(M+m)$.
+
+Na Parte 1, mantendo a massa total constante, a relação peso $\times$ aceleração mostrou-se
+linear ($R^2 = 0{,}9999$) e o coeficiente angular obtido $(0{,}3039~\mathrm{kg})$ reproduziu a
+massa total medida na balança $(0{,}296~\mathrm{kg})$ com erro relativo de apenas $2{,}7\%$,
+confirmando que $p = (M+m)\,a$.
+
+Na Parte 2, mantendo o peso constante, a aceleração mostrou-se inversamente proporcional à massa
+total ($R^2 = 0{,}9999$) e o peso obtido do ajuste $(0{,}2343~\mathrm{N})$ concordou com o peso
+medido $(0{,}245~\mathrm{N})$ com erro relativo de $4{,}4\%$.
+
+Os pequenos desvios observados são compatíveis com as fontes de erro do arranjo experimental
+--- atrito residual no trilho de ar, massa do barbante e inércia da polia ---, de modo que os
+objetivos do experimento foram plenamente alcançados.
 
 %\section{Referências Bibliográficas}
 \begin{thebibliography}{}
 %\bibliography{basename of .bib file}
-%Aqui são exemplos de como devem ficar as referências. Escrevam apenas as referências que foram utilizadas no experimento.
 
-\bibitem{Wytler_1} Wytler C. Santos, {\it Roteiro do Experimento 1}, disponibilizado no portal UnB Aprender3.
+\bibitem{Wytler_1} Wytler C. Santos, {\it Roteiro do Experimento IV --- Leis de Newton},
+disponibilizado no portal UnB Aprender3.
 
-\bibitem{Wytler_2} Wytler C. Santos, {\it Medidas, algarismos e erros}, texto disponibilizado no portal UnB Aprender3.
+\bibitem{Wytler_2} Wytler C. Santos, {\it Medidas, algarismos e erros}, texto disponibilizado
+no portal UnB Aprender3.
 
-\bibitem {Young} H.D. Young \& R.A. Freedman, {\it Física I, Sears \& Zemansky}, Pearson, Addison Wesley, $12^a$ Ed., (2009).
-
-\bibitem {Stefanelli_1} Eduardo J. Stefanelli, {\it Paquímetro universal virtual - simulador com nônio em milímetro 0,05 mm}
-
-https://www.stefanelli.eng.br/paquimetro-virtual-simulador-milimetro-05/
-
-\bibitem {Stefanelli_2} Eduardo J. Stefanelli, {\it Micrômetro virtual - simulador em milímetro centesimal}
-
-https://www.stefanelli.eng.br/micrometro-virtual-milimetro-centesimal-simulador/
+\bibitem {Young} H.D. Young \& R.A. Freedman, {\it Física I, Sears \& Zemansky}, Pearson,
+Addison Wesley, $12^a$ Ed., (2009).
 
 
 
 
 \end{thebibliography}
+
 
 
 
