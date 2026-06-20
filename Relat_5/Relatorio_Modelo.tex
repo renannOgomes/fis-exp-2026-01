@@ -1,0 +1,298 @@
+\documentclass[12pt,a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage[final]{pdfpages}
+\usepackage{pdflscape}
+
+\usepackage{cite}
+\usepackage{bm}
+%\usepackage{indentfirst}
+
+\usepackage{amsmath}
+\usepackage{amsthm,amsfonts}
+\usepackage{latexsym}
+
+\usepackage[left=2.5cm,right=3cm,top=3.5cm,bottom=3cm]{geometry}
+
+\setcounter{tocdepth}{2}
+%------------------------------------------------------------------------------
+\begin{document}
+
+
+%-------------------------------CAPA----------------------------------------
+%------------------------------------------------------------------------------
+\begin{titlepage}
+
+\begin{center}
+
+\large{\textbf{Universidade de Brasília - UnB Gama}}\\[1cm]
+
+
+
+{\large Relatório de Física 1 Experimental}
+
+\vspace{2.3cm}
+{\large }
+\vspace{2.6cm}
+
+
+
+{\LARGE \bf  Experimento V --- Conservação de\\ Energia Mecânica} \vspace{2cm}
+
+Por
+%
+\vspace{2cm}
+
+{\bf	Renann de Oliveira Gomes – 200043030 \\
+		Ana Jullia B. M. Lopes – 232024554 \\
+		Eduardo Henrique - 252015024 \\}
+
+
+
+%
+\vspace*{\fill}
+
+%
+{Brasília-DF, junho de 2026}
+
+
+\end{center}
+\end{titlepage}
+
+
+
+
+\newpage
+
+%\setcounter{chapter}{1}
+
+\section{Objetivos}
+Determinar experimentalmente a massa $M$ de um carrinho que desliza sobre um trilho de ar,
+utilizando o teorema trabalho--energia cinética e a lei de conservação da energia mecânica.
+A massa é obtida por análise gráfica da energia cinética do carrinho em função de sua velocidade
+instantânea, sendo o resultado comparado com o valor medido na balança.
+
+
+
+\section{Introdução Teórica}
+No trilho de ar, a força gravitacional realiza trabalho sobre a massa $m$ suspensa no barbante
+para deslocá-la de uma posição $y_0$ até uma posição $y_1$. O trabalho realizado pela força
+gravitacional sobre a massa suspensa é
+\begin{equation}
+\label{eq:Wg}
+W_g = -\left(mgy_1 - mgy_0\right).
+\end{equation}
+
+Pelo teorema do trabalho--energia cinética, esse trabalho é igual à variação da energia cinética:
+\begin{equation}
+\label{eq:Wg2}
+W_g = \frac{1}{2}mv_1^2 - \frac{1}{2}mv_0^2.
+\end{equation}
+
+No trilho de ar é possível desprezar as forças resistivas e considerar a lei de conservação da
+energia mecânica, $\Delta E = 0$. O sistema mecânico é composto pelo carrinho tracionado pelo
+barbante, pela massa suspensa e pela rodana (polia). Parte da energia mecânica do sistema fica
+também na rodana quando ela gira; essa fração é a energia cinética de rotação $K_R$ da rodana.
+Pela lei de conservação da energia mecânica:
+\begin{equation}
+\label{eq:cons}
+\Delta E_{\text{(carrinho)}} + \Delta E_{\text{(peso)}} + \Delta E_{\text{(rodana)}} = 0,
+\end{equation}
+ou, explicitamente,
+\begin{equation}
+\label{eq:cons2}
+\frac{1}{2}Mv^2 + \frac{1}{2}mv^2 + K_R - mgh = 0.
+\end{equation}
+
+Onde $M$ é a massa do carrinho, $m$ é a massa do peso suspenso, $K_R$ é a energia cinética de
+rotação da rodana e $h$ é a altura que o peso desce quando o sistema parte do repouso e atinge a
+velocidade final $v$. Isolando a energia cinética do carrinho, a equação~\eqref{eq:cons2} pode
+ser reescrita como
+\begin{equation}
+\label{eq:KM}
+\frac{1}{2}Mv^2 = mgh - \frac{1}{2}mv^2 - K_R.
+\end{equation}
+
+A energia cinética de rotação da rodana, modelada como um disco homogêneo de massa $m_R$ e raio
+$R$, momento de inércia $I = \tfrac{1}{2}m_R R^2$, girando com velocidade angular $\omega = v/R$
+(o barbante não desliza), é
+\begin{equation}
+\label{eq:KR}
+K_R = \frac{1}{2}I\omega^2 = \frac{1}{2}\left(\frac{1}{2}m_R R^2\right)\left(\frac{v}{R}\right)^2
+= \frac{1}{4}m_R v^2,
+\end{equation}
+independente do raio $R$.
+
+Como as forças são constantes, o movimento do carrinho é uniformemente variado (MRUV). Partindo
+do repouso, a velocidade instantânea final ao atingir o sensor, distante $\Delta x$ da posição
+inicial, relaciona-se com a velocidade média $\bar{v} = \Delta x / t$ por
+\begin{equation}
+\label{eq:vinst}
+v = 2\,\bar{v} = \frac{2\,\Delta x}{t}, \qquad \Delta x = 0{,}300~\mathrm{m}.
+\end{equation}
+
+A equação~\eqref{eq:KM} mostra que a energia cinética do carrinho, $K_M = \tfrac{1}{2}Mv^2$,
+é uma função quadrática da velocidade. Assim, ajustando a função $K_M = \tfrac{M}{2}\,v^2$ aos
+dados de $K_M$ em função de $v$, obtém-se diretamente a massa $M$ do carrinho.
+
+Todas as medidas foram tomadas no Sistema Internacional de unidades (SI).
+
+
+\section{Parte Experimental e Discussão}
+
+\subsection{Material utilizado}
+\begin{itemize}
+	\item kit trilho de ar com cronômetro digital, sensores e eletroímã;
+	\item 01 carrinho;
+	\item diversos discos metálicos de massas variadas;
+	\item barbante fino e régua.
+\end{itemize}
+
+\subsection{Procedimento}
+Preparou-se o trilho de ar com a mesma configuração do Experimento IV, realizando um Movimento
+Retilíneo Uniformemente Variado para o deslocamento fixo $\Delta x = 30~\mathrm{cm}$. Mediu-se a
+massa do carrinho $(M = 0{,}211~\mathrm{kg})$, a massa do suporte com o peso inicial de
+$30~\mathrm{g}$ $(m = 35~\mathrm{g})$ e a massa da rodana $(m_R = 0{,}005~\mathrm{kg})$. O sensor
+$S_1$ foi posicionado a uma distância fixa $\Delta x = 0{,}300~\mathrm{m}$ do pino central do
+carrinho. Para cada configuração realizaram-se $5$ medidas de tempo; em seguida, acrescentou-se
+$10~\mathrm{g}$ ao peso suspenso e repetiu-se o procedimento, completando a
+Tabela~\ref{tab:tempos}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|} \hline \hline
+	Tempos (s) & $m=35$~g & $m=45$~g & $m=55$~g & $m=65$~g & $m=75$~g & $m=85$~g \\ \hline \hline
+	$t_1$          & 0,665 & 0,602 & 0,552 & 0,518 & 0,490 & 0,471 \\ \hline
+	$t_2$          & 0,666 & 0,599 & 0,550 & 0,519 & 0,491 & 0,468 \\ \hline
+	$t_3$          & 0,675 & 0,600 & 0,556 & 0,521 & 0,491 & 0,469 \\ \hline
+	$t_4$          & 0,671 & 0,547 & 0,554 & 0,520 & 0,489 & 0,468 \\ \hline
+	$t_5$          & 0,670 & 0,600 & 0,496 & 0,523 & 0,492 & 0,470 \\ \hline
+	$\bar{t}$      & 0,669 & 0,590 & 0,542 & 0,520 & 0,491 & 0,469 \\ \hline
+	Erro aleatório & 0,002 & 0,012 & 0,013 & 0,001 & 0,001 & 0,001 \\ \hline
+	Erro absoluto  & 0,003 & 0,013 & 0,014 & 0,002 & 0,002 & 0,002 \\ \hline \hline
+	\end{tabular}
+	\caption{Medidas de tempo --- MRUV do carrinho para cada valor do peso suspenso.}
+	\label{tab:tempos}
+\end{table}
+
+A partir do tempo médio de cada configuração, calculou-se a velocidade instantânea final pela
+equação~\eqref{eq:vinst}. Em seguida, para cada velocidade, foram calculadas a energia potencial
+gravitacional cedida pelo peso $(mgh$, com $h = 0{,}300~\mathrm{m})$, a energia cinética de
+translação do peso $(\tfrac{1}{2}mv^2)$ e a energia cinética de rotação da rodana
+$(K_R = \tfrac{1}{4}m_R v^2)$. A energia cinética do carrinho foi obtida pela equação~\eqref{eq:KM},
+$K_M = mgh - \tfrac{1}{2}mv^2 - K_R$. Os resultados estão na Tabela~\ref{tab:energias}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|} \hline \hline
+	$N$ & $v$ (m/s) & $mgh$ (J) & $\tfrac{1}{2}mv^2$ (J) & $K_R$ (J) & $K_M$ (J) \\ \hline \hline
+	1 & 0,896 & 0,103 & 0,014 & 0,001 & 0,088 \\ \hline
+	2 & 1,018 & 0,132 & 0,023 & 0,001 & 0,108 \\ \hline
+	3 & 1,108 & 0,162 & 0,034 & 0,002 & 0,126 \\ \hline
+	4 & 1,153 & 0,191 & 0,043 & 0,002 & 0,146 \\ \hline
+	5 & 1,223 & 0,221 & 0,056 & 0,002 & 0,163 \\ \hline
+	6 & 1,279 & 0,250 & 0,069 & 0,002 & 0,178 \\ \hline \hline
+	\end{tabular}
+	\caption{Energias finais do sistema em função da velocidade instantânea do carrinho.
+	$K_M = mgh - \tfrac{1}{2}mv^2 - K_R$ é a energia cinética do carrinho.}
+	\label{tab:energias}
+\end{table}
+
+\subsection{Análise dos dados}
+De acordo com a equação~\eqref{eq:KM}, a energia cinética do carrinho deve obedecer
+$K_M = \tfrac{M}{2}\,v^2$, isto é, ser proporcional ao quadrado da velocidade, sendo a constante
+de proporcionalidade igual a metade da massa do carrinho. Realizou-se, portanto, no SciDavis, o
+gráfico de $K_M$ em função da velocidade instantânea $v$ (Figura~\ref{fig:graf1}) e, pelo
+\emph{Fit Wizard}, ajustou-se a função $K_M = (M/2)\,x^2$ pelo algoritmo de Levenberg--Marquardt,
+tendo $M$ como único parâmetro livre. O ajuste forneceu
+\[
+M = 0{,}2153 \pm 0{,}0024~\mathrm{kg}, \qquad R^2 = 0{,}9994,
+\]
+indicando excelente concordância dos dados com a dependência quadrática prevista pela
+equação~\eqref{eq:KM} e, portanto, com a conservação da energia mecânica.
+
+Comparando a massa obtida graficamente com a massa medida na balança,
+$M_{\text{bal}} = 0{,}211~\mathrm{kg}$, o erro relativo é
+\[
+\varepsilon = \frac{|0{,}2153 - 0{,}211|}{0{,}211} \times 100\% \approx 2{,}0\%.
+\]
+A pequena diferença é compatível com as incertezas experimentais --- atrito residual no trilho de
+ar, atrito e inércia da rodana além do modelo de disco homogêneo adotado, e a massa do barbante
+---, que não foram totalmente eliminadas e fazem com que parte da energia gravitacional não se
+converta integralmente em energia cinética do carrinho.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=13cm]{graf1.jpg}
+	\caption{Energia cinética do carrinho $K_M$ em função da velocidade instantânea $v$, com o
+	ajuste quadrático $K_M = (M/2)\,v^2$. O parâmetro $M$ corresponde à massa do carrinho.}
+	\label{fig:graf1}
+\end{figure}
+
+
+\section{Conclusão}
+O experimento permitiu determinar a massa do carrinho a partir da conservação da energia mecânica
+no trilho de ar. A energia cinética do carrinho mostrou-se proporcional ao quadrado da velocidade
+instantânea ($R^2 = 0{,}9994$), conforme previsto pela equação $K_M = \tfrac{M}{2}\,v^2$, e o
+ajuste quadrático forneceu $M = 0{,}2153~\mathrm{kg}$.
+
+Esse valor concorda com a massa medida diretamente na balança $(0{,}211~\mathrm{kg})$, com erro
+relativo de apenas $2{,}0\%$. O pequeno desvio é coerente com as fontes de erro do arranjo
+experimental (atrito residual, inércia da rodana e massa do barbante), de modo que o objetivo do
+experimento --- determinar $M$ pela conservação da energia mecânica --- foi plenamente alcançado.
+
+%\section{Referências Bibliográficas}
+\begin{thebibliography}{}
+%\bibliography{basename of .bib file}
+
+\bibitem{Wytler_1} R. Aristóteles \& Wytler C. Santos, {\it Roteiro do Experimento V ---
+Conservação de Energia Mecânica}, disponibilizado no portal UnB Aprender3.
+
+\bibitem{Wytler_2} Wytler C. Santos, {\it Medidas, algarismos e erros}, texto disponibilizado
+no portal UnB Aprender3.
+
+\bibitem {Young} H.D. Young \& R.A. Freedman, {\it Física I, Sears \& Zemansky}, Pearson,
+Addison Wesley, $12^a$ Ed., (2009).
+
+
+
+
+\end{thebibliography}
+
+
+
+
+%\newpage
+
+% \includepdf[pages=1]{Geometrodynamics.pdf} %%%%% Use esse comando se desejar acrescentar uma pagina em pdf
+
+
+%-------------------------------ANEXOS--------------------------------------
+\appendix
+
+% Margens reduzidas na pagina de anexo para o grafico ocupar o maximo possivel
+\newgeometry{left=0.8cm,right=0.8cm,top=0.8cm,bottom=0.8cm}
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{center}
+	\vspace*{\fill}
+	\includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{graf1.jpg}\\[0.6cm]
+	{\large Gráfico 1 --- Energia cinética do carrinho $K_M$ em função da velocidade instantânea
+	$v$, com o ajuste quadrático $K_M = (M/2)\,v^2$.}
+	\vspace*{\fill}
+\end{center}
+\end{landscape}
+
+\restoregeometry
+
+
+\end{document}
