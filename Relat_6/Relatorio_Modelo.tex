@@ -1,0 +1,497 @@
+\documentclass[12pt,a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage[final]{pdfpages}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\usepackage{cite}
+\usepackage{bm}
+%\usepackage{indentfirst}
+
+\usepackage{amsmath}
+\usepackage{amsthm,amsfonts}
+\usepackage{latexsym}
+
+\usepackage[left=2.5cm,right=3cm,top=3.5cm,bottom=3cm]{geometry}
+
+\setcounter{tocdepth}{2}
+%------------------------------------------------------------------------------
+\begin{document}
+
+
+%-------------------------------CAPA----------------------------------------
+%------------------------------------------------------------------------------
+\begin{titlepage}
+
+\begin{center}
+
+\large{\textbf{Universidade de Brasília - UnB Gama}}\\[1cm]
+
+
+
+{\large Relatório de Física 1 Experimental}
+
+\vspace{2.3cm}
+{\large }
+\vspace{2.6cm}
+
+
+
+{\LARGE \bf  Experimento VI --- Conservação do\\ Momento e Colisões} \vspace{2cm}
+
+Por
+%
+\vspace{2cm}
+
+{\bf	Renann de Oliveira Gomes – 200043030 \\
+		Ana Jullia B. M. Lopes – 232024554 \\
+		Eduardo Henrique - 252015024 \\}
+
+
+
+%
+\vspace*{\fill}
+
+%
+{Brasília-DF, julho de 2026}
+
+
+\end{center}
+\end{titlepage}
+
+
+
+
+\newpage
+
+%\setcounter{chapter}{1}
+
+\section{Objetivos}
+Analisar e estudar colisões unidimensionais entre dois carrinhos sobre um trilho de ar, com as
+forças resistivas reduzidas. Verificar experimentalmente a validade do princípio da conservação
+do momento linear em colisões elásticas e completamente inelásticas, bem como da conservação da
+energia cinética (no caso elástico) e a fração de energia dissipada (no caso inelástico).
+
+
+
+\section{Introdução Teórica}
+
+\subsection{Colisões elásticas}
+Uma colisão elástica em um sistema isolado é aquela na qual há conservação simultânea do momento
+linear e da energia cinética. As colisões entre dois carrinhos no trilho de ar são
+aproximadamente elásticas quando reduzimos as forças resistivas --- como a força de atrito, que
+praticamente desaparece quando os carrinhos flutuam sobre o colchão de ar gerado entre eles e o
+trilho. Ao examinarmos a colisão entre um carrinho $A$ e um carrinho $B$ em uma dimensão, o
+carrinho $B$ é deixado em repouso e o carrinho $A$ é colocado em movimento retilíneo uniforme
+(MRU) para colidir com ele. Como o momento total do sistema deve ser conservado, o momento total
+inicial é igual ao momento total final:
+\begin{equation}
+\label{eq:p}
+m_A v_{Ai} + m_B v_{Bi} = m_A v_{Af} + m_B v_{Bf}.
+\end{equation}
+
+A energia cinética total inicial é igual à energia cinética total final:
+\begin{equation}
+\label{eq:k}
+\frac{1}{2}m_A v_{Ai}^2 + \frac{1}{2}m_B v_{Bi}^2 =
+\frac{1}{2}m_A v_{Af}^2 + \frac{1}{2}m_B v_{Bf}^2.
+\end{equation}
+
+Deixando o carrinho $B$ inicialmente em repouso, $v_{Bi}=0$, e resolvendo o sistema formado pelas
+equações~\eqref{eq:p} e~\eqref{eq:k}, obtêm-se as velocidades finais em termos da velocidade
+inicial do carrinho $A$:
+\begin{equation}
+\label{eq:vAf}
+v_{Af} = \frac{m_A - m_B}{m_A + m_B}\, v_{Ai},
+\end{equation}
+\begin{equation}
+\label{eq:vBf}
+v_{Bf} = \frac{m_A}{m_B}\left(v_{Ai} - v_{Af}\right).
+\end{equation}
+As equações~\eqref{eq:vAf} e~\eqref{eq:vBf} serão utilizadas para analisar as duas leis de
+conservação envolvidas: momento e energia.
+
+\subsection{Colisões completamente inelásticas}
+Nesse tipo de colisão a energia cinética do sistema não se conserva, sendo conservado apenas o
+momento linear. Colocando o carrinho $A$ para colidir com o carrinho $B$ inicialmente em repouso,
+$v_{Bi}=0$, após a colisão o carrinho $A$ se cola ao carrinho $B$ e os dois passam a se
+movimentar acoplados com a mesma velocidade. A partir da equação~\eqref{eq:p}, as velocidades
+finais serão $v_{Af}=v_{Bf}=v_{ABf}$, dada por
+\begin{equation}
+\label{eq:vABf}
+v_{ABf} = \frac{m_A}{m_A + m_B}\, v_{Ai}.
+\end{equation}
+
+A razão entre a energia cinética final,
+\begin{equation}
+\label{eq:kf}
+K_f = \frac{1}{2}\left(m_A + m_B\right)v_{ABf}^2,
+\end{equation}
+e a energia cinética inicial,
+\begin{equation}
+\label{eq:ki}
+K_i = \frac{1}{2}m_A v_{Ai}^2,
+\end{equation}
+resulta em
+\begin{equation}
+\label{eq:razao}
+\frac{K_f}{K_i} = \frac{m_A}{m_A + m_B}.
+\end{equation}
+Em uma colisão totalmente inelástica parte da energia cinética inicial é sempre perdida na
+colisão.
+
+Em ambas as partes, a velocidade de cada carrinho foi obtida a partir do intervalo de tempo que a
+placa de largura $\ell = 10~\mathrm{cm} = 0{,}10~\mathrm{m}$, fixada sobre o carrinho, leva para
+atravessar o sensor do cronômetro:
+\begin{equation}
+\label{eq:vel}
+v = \frac{\ell}{\Delta t} = \frac{0{,}10~\mathrm{m}}{\Delta t}.
+\end{equation}
+
+
+\section{Parte Experimental e Discussão}
+
+\subsection{Material utilizado}
+\begin{itemize}
+	\item kit trilho de ar;
+	\item 02 carrinhos;
+	\item 02 fixadores em U com elásticos (para os choques elásticos);
+	\item 01 pino para carrinho com agulha e 01 pino com massa aderente (para os choques
+	totalmente inelásticos);
+	\item kit cronômetro com dois sensores ($S_1$ e $S_2$).
+\end{itemize}
+
+\subsection{1ª Parte --- Colisão elástica}
+Os dois carrinhos foram posicionados sobre o trilho de ar com os fixadores em U com elásticos.
+Sobre cada carrinho fixou-se uma placa retangular de $10~\mathrm{cm}$, que ao passar pelos
+sensores permite ao cronômetro registrar os intervalos de tempo e, assim, calcular as
+velocidades. Selecionou-se a função F3 do cronômetro: o sensor $S_1$ registra o intervalo de
+tempo $\Delta t_1$ do carrinho $A$ e o sensor $S_2$ o intervalo $\Delta t_2$ do carrinho $B$. O
+carrinho $A$ recebeu um impulso, entrando em MRU para colidir com o carrinho $B$, mantido em
+repouso. O impulso é dado por um gancho (massa suspensa $m_g$) ligado ao carrinho $A$ por um fio
+que passa por uma roldana na extremidade do trilho: a força peso do gancho traciona o fio e
+acelera o carrinho $A$ até que este atinja a velocidade de MRU. A montagem e as forças atuantes
+estão esquematizadas na Figura~\ref{fig:montagem}. As massas medidas dos carrinhos estão na
+Tabela~\ref{tab:massas-el}.
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[>={Latex[length=2.4mm]}, thick, line join=round, scale=1.0]
+
+	% ---------------- Trilho de ar ----------------
+	\fill[gray!12] (0,0) rectangle (12,0.4);
+	\draw[very thick] (0,0) rectangle (12,0.4);
+	\draw[very thick] (1.2,0) -- (1.2,-0.35);
+	\draw[very thick] (10.8,0) -- (10.8,-0.35);
+	\node[anchor=north] at (3.2,-0.12) {\small Trilho de ar};
+
+	% ---------------- Carrinho A ----------------
+	\draw[very thick, fill=white] (0.7,0.4) rectangle (2.0,1.15);
+	\node at (1.35,0.77) {$A$};
+	\draw (0.95,1.15) -- (0.95,2.5);                 % haste (mastro)
+
+	% ---------------- Carrinho B ----------------
+	\draw[very thick, fill=white] (5.4,0.4) rectangle (6.6,1.05);
+	\node at (6.0,0.72) {$B$};
+
+	% ---------------- Fios e roldanas ----------------
+	\draw (0.95,2.5) -- (11.85,2.5);                 % fio horizontal
+	\draw[very thick, fill=white] (4.2,2.68) circle (0.2);    % sensor 1 (S1)
+	\node[anchor=south] at (4.2,2.9) {\small Sensor 1 ($S_1$)};
+	\draw[very thick, fill=white] (8.0,2.68) circle (0.2);    % sensor 2 (S2), após o carrinho B
+	\node[anchor=south] at (8.0,2.9) {\small Sensor 2 ($S_2$)};
+	\draw[very thick, fill=white] (11.9,2.45) circle (0.22);  % roldana da extremidade
+	\node[anchor=south] at (11.9,2.72) {\small roldana};
+	\draw (12.12,2.45) -- (12.12,0.55);              % fio descendo ao gancho
+	\draw[very thick, fill=white]
+	      (12.12,0.55) -- (11.82,0.2) -- (11.92,-0.25) -- (12.32,-0.25) -- (12.42,0.2) -- cycle;
+	\node[anchor=west] at (12.5,0.15) {\small gancho ($m_g$)};
+
+	% ---------------- Forças e velocidades ----------------
+	% Tração no carrinho A (ao longo do fio, para a roldana)
+	\draw[->, blue!55!black] (0.95,2.5) -- (2.35,2.5) node[above, pos=0.65] {$\vec{T}$};
+	% Velocidade inicial de A
+	\draw[->, red!70!black] (2.0,0.9) -- (3.3,0.9) node[above, pos=0.75] {$\vec{v}_{Ai}$};
+	% Normal e peso de A
+	\draw[->] (1.6,0.77) -- (1.6,1.75) node[right] {$\vec{N}_A$};
+	\draw[->] (1.35,0.77) -- (1.35,-0.35) node[right, pos=0.95] {$\vec{P}_A$};
+	% Normal e peso de B
+	\draw[->] (6.0,0.72) -- (6.0,1.7) node[right] {$\vec{N}_B$};
+	\draw[->] (6.0,0.72) -- (6.0,-0.4) node[right, pos=0.95] {$\vec{P}_B$};
+	\node[anchor=west] at (6.75,0.6) {\small $v_{Bi}=0$};
+	% Tração e peso do gancho
+	\draw[->, blue!55!black] (12.12,0.15) -- (12.12,1.45) node[right, pos=0.9] {$\vec{T}$};
+	\draw[->] (12.12,0.15) -- (12.12,-1.0) node[right, pos=0.95] {$\vec{P}_g = m_g\,\vec{g}$};
+
+\end{tikzpicture}
+\caption{Montagem do sistema para a colisão elástica no trilho de ar. O gancho de massa $m_g$
+traciona o fio ($\vec{T}$) que, passando pela roldana, acelera o carrinho $A$ até o MRU com
+velocidade $\vec{v}_{Ai}$, colidindo com o carrinho $B$ em repouso ($v_{Bi}=0$). Também estão
+indicadas as forças normais ($\vec{N}_A$, $\vec{N}_B$), os pesos dos carrinhos ($\vec{P}_A$,
+$\vec{P}_B$) e o peso do gancho ($\vec{P}_g = m_g\,\vec{g}$).}
+\label{fig:montagem}
+\end{figure}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|} \hline \hline
+	massa do carrinho $A$ (kg) & massa do carrinho $B$ (kg) \\ \hline \hline
+	0,2395 & 0,271 \\ \hline \hline
+	\end{tabular}
+	\caption{Massas dos carrinhos na colisão elástica.}
+	\label{tab:massas-el}
+\end{table}
+
+Realizaram-se $5$ colisões, registrando-se os intervalos de tempo do carrinho $A$
+($\Delta t_1$, antes da colisão) e do carrinho $B$ ($\Delta t_2$, após a colisão), conforme a
+Tabela~\ref{tab:tempos-el}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|} \hline \hline
+	Colisão & $\Delta t_1$ (s) & $\Delta t_2$ (s) \\ \hline \hline
+	1 & 0,202 & 0,216 \\ \hline
+	2 & 0,205 & 0,219 \\ \hline
+	3 & 0,202 & 0,214 \\ \hline
+	4 & 0,201 & 0,217 \\ \hline
+	5 & 0,202 & 0,205 \\ \hline
+	Tempo médio & 0,202 & 0,214 \\ \hline \hline
+	\end{tabular}
+	\caption{Intervalos de tempo para as colisões elásticas.}
+	\label{tab:tempos-el}
+\end{table}
+
+A partir dos tempos médios e da equação~\eqref{eq:vel}, a velocidade inicial do carrinho $A$ e a
+velocidade final do carrinho $B$ (medida diretamente) são
+\[
+v_{Ai} = \frac{0{,}10}{0{,}202} = 0{,}494~\mathrm{m/s}, \qquad
+v_{Bf} = \frac{0{,}10}{0{,}214} = 0{,}467~\mathrm{m/s}, \qquad v_{Bi} = 0.
+\]
+
+Pela equação~\eqref{eq:vAf}, a velocidade final do carrinho $A$ é
+\[
+v_{Af} = \frac{m_A - m_B}{m_A + m_B}\, v_{Ai}
+       = \frac{0{,}2395 - 0{,}271}{0{,}2395 + 0{,}271}\times 0{,}494
+       = -0{,}030~\mathrm{m/s},
+\]
+cujo sinal negativo indica que o carrinho $A$ recua após a colisão, coerente com o fato de
+$m_B > m_A$. Pela equação~\eqref{eq:vBf}, a velocidade final teórica do carrinho $B$ é
+\[
+v_{Bf}^{\text{teo}} = \frac{m_A}{m_B}\left(v_{Ai} - v_{Af}\right)
+       = \frac{0{,}2395}{0{,}271}\left(0{,}494 - (-0{,}030)\right) = 0{,}464~\mathrm{m/s}.
+\]
+Comparando com o valor medido $v_{Bf} = 0{,}467~\mathrm{m/s}$, o erro relativo é de apenas
+$0{,}71\%$, mostrando boa concordância entre a previsão teórica e a medida experimental.
+
+Os valores de momento linear e energia cinética estão resumidos na
+Tabela~\ref{tab:result-el}. O momento inicial e final são
+\[
+P_i = m_A v_{Ai} = 0{,}118~\mathrm{kg\,m/s}, \qquad
+P_f = m_A v_{Af} + m_B v_{Bf} = 0{,}119~\mathrm{kg\,m/s},
+\]
+e o erro relativo entre eles é
+\[
+E = \frac{|P_i - P_f|}{P_i} = 0{,}75\% < 5\%.
+\]
+As energias cinéticas inicial e final são
+\[
+K_i = \frac{1}{2}m_A v_{Ai}^2 = 0{,}029~\mathrm{J}, \qquad
+K_f = \frac{1}{2}m_A v_{Af}^2 + \frac{1}{2}m_B v_{Bf}^2 = 0{,}030~\mathrm{J},
+\]
+com erro relativo
+\[
+E = \frac{|K_i - K_f|}{K_i} = 1{,}41\% < 5\%.
+\]
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|c|} \hline \hline
+	Grandeza & Valor \\ \hline \hline
+	Velocidade inicial $v_{Ai}$ (m/s)        & 0,494 \\ \hline
+	Velocidade inicial $v_{Bi}$ (m/s)        & 0,000 \\ \hline
+	Velocidade final $v_{Af}$ --- eq.~\eqref{eq:vAf} (m/s) & $-0{,}030$ \\ \hline
+	Velocidade final $v_{Bf}$ --- medida (m/s)   & 0,467 \\ \hline
+	Velocidade final $v_{Bf}$ --- teórica eq.~\eqref{eq:vBf} (m/s) & 0,464 \\ \hline
+	Momento inicial $P_i$ (kg\,m/s)          & 0,118 \\ \hline
+	Momento final $P_f$ (kg\,m/s)            & 0,119 \\ \hline
+	Erro relativo do momento                 & 0,75\% \\ \hline
+	Energia cinética inicial $K_i$ (J)       & 0,029 \\ \hline
+	Energia cinética final $K_f$ (J)         & 0,030 \\ \hline
+	Erro relativo da energia                 & 1,41\% \\ \hline \hline
+	\end{tabular}
+	\caption{Resultados da colisão elástica.}
+	\label{tab:result-el}
+\end{table}
+
+\paragraph{Discussão.} Como os erros relativos do momento ($0{,}75\%$) e da energia cinética
+($1{,}41\%$) são bem inferiores a $5\%$, pode-se afirmar que tanto o momento linear quanto a
+energia cinética foram conservados na colisão, dentro das incertezas experimentais. Isso confirma
+o comportamento aproximadamente elástico das colisões no trilho de ar quando as forças resistivas
+são reduzidas. Os pequenos desvios observados decorrem do atrito residual com o colchão de ar, de
+perdas nos elásticos dos fixadores em U e das flutuações nos tempos medidos pelos sensores.
+
+\subsection{2ª Parte --- Colisão completamente inelástica}
+Retirou-se o fixador em U com elástico, fixando-se o pino com agulha no carrinho $A$ e o pino com
+massa aderente no carrinho $B$. Manteve-se a placa de $10~\mathrm{cm}$ sobre cada carrinho e a
+função F3 no cronômetro, repetindo-se o procedimento: o carrinho $A$ recebe um impulso e entra em
+MRU para colidir com o carrinho $B$ em repouso. Após a colisão, a agulha do pino do carrinho $A$
+se prende à massa aderente do carrinho $B$, e os dois se movem colados. As massas medidas estão
+na Tabela~\ref{tab:massas-in}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|} \hline \hline
+	massa do carrinho $A$ (kg) & massa do carrinho $B$ (kg) \\ \hline \hline
+	0,230 & 0,221 \\ \hline \hline
+	\end{tabular}
+	\caption{Massas dos carrinhos na colisão completamente inelástica.}
+	\label{tab:massas-in}
+\end{table}
+
+Nessas condições realizaram-se $5$ colisões, registrando-se o intervalo de tempo do carrinho $A$
+antes da colisão ($\Delta t_1$) e o intervalo de tempo do conjunto acoplado após a colisão
+($\Delta t_2$), conforme a Tabela~\ref{tab:tempos-in}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|} \hline \hline
+	Colisão & $\Delta t_1$ (s) & $\Delta t_2$ (s) \\ \hline \hline
+	1 & 0,158 & 0,323 \\ \hline
+	2 & 0,157 & 0,332 \\ \hline
+	3 & 0,161 & 0,378 \\ \hline
+	4 & 0,164 & 0,343 \\ \hline
+	5 & 0,166 & 0,366 \\ \hline
+	Tempo médio & 0,161 & 0,348 \\ \hline \hline
+	\end{tabular}
+	\caption{Intervalos de tempo para as colisões inelásticas.}
+	\label{tab:tempos-in}
+\end{table}
+
+A partir dos tempos médios e da equação~\eqref{eq:vel}, a velocidade inicial do carrinho $A$ e a
+velocidade final do conjunto acoplado (medida diretamente) são
+\[
+v_{Ai} = \frac{0{,}10}{0{,}161} = 0{,}620~\mathrm{m/s}, \qquad
+v_{ABf} = \frac{0{,}10}{0{,}348} = 0{,}287~\mathrm{m/s}, \qquad v_{Bi} = 0.
+\]
+
+Pela equação~\eqref{eq:vABf}, a velocidade final teórica do conjunto é
+\[
+v_{ABf}^{\text{teo}} = \frac{m_A}{m_A + m_B}\, v_{Ai}
+       = \frac{0{,}230}{0{,}230 + 0{,}221}\times 0{,}620 = 0{,}316~\mathrm{m/s}.
+\]
+O erro relativo entre a velocidade medida e a teórica é
+\[
+E = \frac{\left|v_{ABf} - v_{ABf}^{\text{teo}}\right|}{v_{ABf}} = 10{,}22\%.
+\]
+
+O momento inicial e final são
+\[
+P_i = m_A v_{Ai} = 0{,}143~\mathrm{kg\,m/s}, \qquad
+P_f = (m_A + m_B)\, v_{ABf} = 0{,}129~\mathrm{kg\,m/s},
+\]
+com erro relativo
+\[
+E = \frac{|P_i - P_f|}{P_i} = 9{,}27\%.
+\]
+
+As energias cinéticas inicial e final são
+\[
+K_i = \frac{1}{2}m_A v_{Ai}^2 = 0{,}044~\mathrm{J}, \qquad
+K_f = \frac{1}{2}(m_A + m_B)\, v_{ABf}^2 = 0{,}019~\mathrm{J},
+\]
+e a quantidade de energia perdida na colisão é
+\[
+Q = K_f - K_i = -0{,}026~\mathrm{J}.
+\]
+
+Por fim, verificando a validade da equação~\eqref{eq:razao}, a razão experimental entre as
+energias cinéticas é
+\[
+\left(\frac{K_f}{K_i}\right)_{\text{exp}} = \frac{0{,}019}{0{,}044} = 0{,}420,
+\]
+enquanto o valor teórico previsto pela equação~\eqref{eq:razao} é
+\[
+\left(\frac{K_f}{K_i}\right)_{\text{teo}} = \frac{m_A}{m_A + m_B}
+       = \frac{0{,}230}{0{,}451} = 0{,}510.
+\]
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|c|} \hline \hline
+	Grandeza & Valor \\ \hline \hline
+	Velocidade inicial $v_{Ai}$ (m/s)                     & 0,620 \\ \hline
+	Velocidade inicial $v_{Bi}$ (m/s)                     & 0,000 \\ \hline
+	Velocidade final $v_{ABf}$ --- medida (m/s)           & 0,287 \\ \hline
+	Velocidade final $v_{ABf}$ --- teórica eq.~\eqref{eq:vABf} (m/s) & 0,316 \\ \hline
+	Erro relativo da velocidade final                     & 10,22\% \\ \hline
+	Momento inicial $P_i$ (kg\,m/s)                       & 0,143 \\ \hline
+	Momento final $P_f$ (kg\,m/s)                         & 0,129 \\ \hline
+	Erro relativo do momento                              & 9,27\% \\ \hline
+	Energia cinética inicial $K_i$ (J)                    & 0,044 \\ \hline
+	Energia cinética final $K_f$ (J)                      & 0,019 \\ \hline
+	Energia perdida $Q = K_f - K_i$ (J)                   & $-0{,}026$ \\ \hline
+	$K_f/K_i$ experimental                                & 0,420 \\ \hline
+	$K_f/K_i$ teórica --- eq.~\eqref{eq:razao}            & 0,510 \\ \hline \hline
+	\end{tabular}
+	\caption{Resultados da colisão completamente inelástica.}
+	\label{tab:result-in}
+\end{table}
+
+\paragraph{Discussão.} No choque totalmente inelástico o erro relativo do momento foi de
+$9{,}27\%$, um pouco acima do limite de $5\%$. Ainda assim, o momento pode ser considerado
+aproximadamente conservado: o valor superior ao caso elástico é esperado, pois no acoplamento dos
+carrinhos há maior dissipação (deformação da massa aderente, cravamento da agulha e maior
+dispersão nos tempos $\Delta t_2$ medidos, evidenciada pela maior variação entre as cinco
+medidas). Já a energia cinética \emph{não} se conserva: houve perda de $Q = -0{,}026~\mathrm{J}$,
+o equivalente a cerca de $58\%$ da energia cinética inicial, convertida em deformação, calor e som
+no impacto. A razão experimental $K_f/K_i = 0{,}420$ é da mesma ordem do valor teórico
+$0{,}510$ previsto pela equação~\eqref{eq:razao}, confirmando qualitativamente sua validade; a
+diferença é compatível com as perdas por atrito e com a incerteza na medida de $\Delta t_2$.
+
+
+\section{Conclusão}
+O experimento permitiu analisar as duas leis de conservação em colisões unidimensionais no trilho
+de ar. Na colisão elástica, tanto o momento linear (erro de $0{,}75\%$) quanto a energia cinética
+(erro de $1{,}41\%$) foram conservados dentro das incertezas experimentais, confirmando o
+caráter aproximadamente elástico do choque quando as forças resistivas são reduzidas; além disso,
+a velocidade final do carrinho $B$ prevista pela teoria ($0{,}464~\mathrm{m/s}$) concordou com a
+medida ($0{,}467~\mathrm{m/s}$) com erro de apenas $0{,}71\%$.
+
+Na colisão completamente inelástica, o momento linear manteve-se aproximadamente conservado
+(erro de $9{,}27\%$), enquanto a energia cinética não se conservou, com perda de
+$0{,}026~\mathrm{J}$. A razão medida entre as energias cinéticas final e inicial
+($K_f/K_i = 0{,}420$) mostrou-se compatível com o valor teórico da equação~\eqref{eq:razao}
+($0{,}510$). Dessa forma, verificou-se experimentalmente que o momento linear se conserva em
+ambos os tipos de colisão, ao passo que a energia cinética só se conserva na colisão elástica,
+cumprindo os objetivos do experimento.
+
+%\section{Referências Bibliográficas}
+\begin{thebibliography}{}
+%\bibliography{basename of .bib file}
+
+\bibitem{Wytler_1} Wytler C. Santos, {\it Roteiro do Experimento VI --- Conservação do Momento e
+Colisões}, disponibilizado no portal UnB Aprender3.
+
+\bibitem{Wytler_2} Wytler C. Santos, {\it Medidas, algarismos e erros}, texto disponibilizado
+no portal UnB Aprender3.
+
+\bibitem {Young} H.D. Young \& R.A. Freedman, {\it Física I, Sears \& Zemansky}, Pearson,
+Addison Wesley, $12^a$ Ed., (2009).
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
